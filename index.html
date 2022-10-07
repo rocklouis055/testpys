@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <py-env>
+        - matplotlib
+        - pandas
+        - openpyxl
+        - paths:
+          - /louise
+  </py-env>
+</head>
+
+<body>
+  <py-script src="./hello.py">  </py-script>
+  <div>
+  <input id="name" type="text">
+  <br>
+  <input id="email" type="email">
+  <br>
+  <input id="password" type="password">
+  <div id="inandop"></div>
+  <button id="newbutton" type="submit" py-click="getdata()">Some</button> 
+  <button id="newfilebutton" type="submit" py-click="readdata()">File</button>
+  </div>
+  <a id="newdownload" download>some.xlsx</a>
+  <pre id="op"></pre>
+    
+  <script src="script.js"></script>
+  <script>
+    console.log("Hello World!!!")
+  </script>
+
+<!-- <script>
+  /* UPDATE PATHS TO POINT TO YOUR ASSETS */
+  const SERVICE_WORKER_PATH = "/sw.js";
+  const JSON_FILE_PATH = "./data.json";
+  /* IF USING MODULE-TYPE SERVICE WORKER, REPLACE THESE OPTIONS */
+  const REGISTRATION_OPTIONS = {
+    scope: "/",
+  };
+
+  // modified snippet from
+  // https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API/Using_Service_Workers
+  async function registerServiceWorker() {
+    if ("serviceWorker" in navigator) {
+      try {
+        const registration = await navigator.serviceWorker.register(
+          SERVICE_WORKER_PATH,
+          REGISTRATION_OPTIONS,
+        );
+        if (registration.installing) {
+          console.log("Service worker installing");
+        } else if (registration.waiting) {
+          console.log("Service worker installed");
+        } else if (registration.active) {
+          console.log("Service worker active");
+        }
+      } catch (error) {
+        console.error(`Registration failed with ${error}`);
+      }
+    }
+  }
+
+  async function fetchAndLogData() {
+    try {
+      console.log(await (await fetch(JSON_FILE_PATH)).json());
+    } catch (e) {
+      console.error("Failed to fetch", e);
+    }
+  }
+
+  registerServiceWorker();
+</script> -->
+
+  <!--
+  This script places a badge on your repl's full-browser view back to your repl's cover
+  page. Try various colors for the theme: dark, light, red, orange, yellow, lime, green,
+  teal, blue, blurple, magenta, pink!
+  -->
+  <!-- <script src="https://replit.com/public/js/replit-badge.js" theme="blue" defer></script> -->
+</body>
+
+</html>
